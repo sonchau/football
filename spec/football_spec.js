@@ -1,3 +1,30 @@
+describe("Football.addTeams", function () {
+  it("should add team", function() {
+        
+        var data = [
+            { "name" : "son",
+              "for" : 20,
+              "against": 3
+            }, 
+            { "name" : "mike",
+              "for" : 10,
+              "against": 30
+            },
+            { "name" : "test",
+              "for" : 0,
+              "against": 3001
+            }
+        ];
+        var collection = Football.addTeams(data).league;
+        console.log('Football.addTeams', collection, ' typeof ', typeof collection.length);
+        expect(collection.length).toEqual(3);
+        expect(collection.models[0].get('against')).toEqual(3);
+        expect(collection.models[1].get('for')).toEqual(10);
+        expect(collection.models[2].get('name')).toEqual('test');
+        expect(collection.models[0].get('diff')).toEqual(17);
+  })
+});
+
 describe("Football Model", function () {
   beforeEach(function() {
     this.fooball = new Football.Team({
@@ -41,8 +68,6 @@ describe("Football Collection", function () {
     this.teams = new Football.Teams();
     // this.todoStub = sinon.stub(window, 'Todo');
   });
-
-
 });
 
 describe("Football", function () {

@@ -2,35 +2,51 @@ var Football = Football || {};
 
 Football = {
   start: function() {
-    Football.addTeams(data);
-    new Football.ListView({el: $("#data")});
+    new Football.ListView({el: $("#data tbody")});
   }
 };
 
 Football.Team = Backbone.Model.extend({});
 
 Football.Teams = Backbone.Collection.extend({
-  model: Football.Team
+  model: Football.Team,
+  comparator: function (team) {
+    return team.get('for') - team.get('against');
+    // return -(team.get('for') - team.get('against'));
+  }
 });
 
-Football.addTeams = function(arr) {
-  var teams = [];
-  _.each(arr, function (team) {
-    teams.push(new Football.Team(team));
-  });
-  this.league = this.league || new Football.Teams();
-  this.league.add(teams);
-};
-
 Football.ListView = Backbone.View.extend({  
-
+  
     initialize: function(){
-      _.bindAll(this, 'render');   
-       this.render(); 
+      _.bindAll(this, 'render');
+      this.league = new Football.Teams();
+      this.league.add(data);   
+      this.render(); 
     },
         
     render: function(){
-      $(this.el).append('<ul><li>hello world</li></ul>');
+
+      console.log(this)
+      _(this.league.models).each( function (item) {
+           $(this.el).append('<tr><td>' + item.get('name') + '</td><td>' + item.get('for') + '</td><td>' + item.get('against') + '</td></tr>');
+         }, this);
+      $("#diff-smallest span.name").html(
+          this.league.at(0).get('name')
+      );
+      $("#diff-largest span.name").html(
+          this.league.at(this.league.length - 1).get('name')
+      );
       return this;
     }
 });
+
+
+
+
+
+// var teams = new Football.Teams();
+// teams.add(data);
+
+// max and min
+// console.log('teams', teams.at(0).get('name'), teams.at(teams.length - 1).get('name'));

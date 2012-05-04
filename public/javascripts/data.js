@@ -1,15 +1,15 @@
 
 var data = [
-    { "name" : "son",
-      "wins" : 20,
-      "losses": 3
+    { "name" : "Arsenal",
+      "for" : 79,
+      "against": 36
     }, 
-    { "name" : "mike",
-      "wins" : 10,
-      "losses": 30
+    { "name" : "Liverpool",
+      "for" : 67,
+      "against": 30
     },
-    { "name" : "test",
-      "wins" : 0,
-      "losses": 3001
+    { "name" : "Manchester_U",
+      "for" : 87,
+      "against": 45
     }
 ];
