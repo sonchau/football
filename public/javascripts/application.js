@@ -10,6 +10,7 @@ Football.CreateDiff = function (arr) {
   _.each(arr, function(item){
     item.goalsDiff = Math.abs(item.goalsFor - item.goalsAgainst);
   });
+  return arr;
 };
 
 Football.Team = Backbone.Model.extend({});
@@ -44,13 +45,3 @@ Football.ListView = Backbone.View.extend({
       return this;
     }
 });
-
-
-
-
-
-// var teams = new Football.Teams();
-// teams.add(data);
-
-// max and min
-// console.log('teams', teams.at(0).get('name'), teams.at(teams.length - 1).get('name'));
