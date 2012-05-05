@@ -11,8 +11,7 @@ Football.Team = Backbone.Model.extend({});
 Football.Teams = Backbone.Collection.extend({
   model: Football.Team,
   comparator: function (team) {
-    return team.get('for') - team.get('against');
-    // return -(team.get('for') - team.get('against'));
+    return team.get('against') - team.get('for');
   }
 });
 
@@ -26,8 +25,6 @@ Football.ListView = Backbone.View.extend({
     },
         
     render: function(){
-
-      console.log(this)
       _(this.league.models).each( function (item) {
            $(this.el).append('<tr><td>' + item.get('name') + '</td><td>' + item.get('for') + '</td><td>' + item.get('against') + '</td></tr>');
          }, this);
