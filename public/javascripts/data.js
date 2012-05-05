@@ -1,82 +1,82 @@
 var data = [
     { "name" : "Arsenal",
-      "for" : 79,
-      "against": 36
-    }, 
+      "goalsFor" : 79,
+      "goalsAgainst": 36
+    },
     { "name" : "Liverpool",
-      "for" : 67,
-      "against": 30
+      "goalsFor" : 67,
+      "goalsAgainst": 30
     },
     { "name" : "Manchester_U",
-      "for" : 87,
-      "against": 45
+      "goalsFor" : 87,
+      "goalsAgainst": 45
     },
     { "name" : "Newcastle",
-      "for" : 74,
-      "against": 52
-    }, 
+      "goalsFor" : 74,
+      "goalsAgainst": 52
+    },
     { "name" : "Leeds",
-      "for" : 53,
-      "against": 37
+      "goalsFor" : 53,
+      "goalsAgainst": 37
     },
     { "name" : "Chelsea",
-      "for" : 66,
-      "against": 38
+      "goalsFor" : 66,
+      "goalsAgainst": 38
     },
     { "name" : "West_Ham",
-      "for" : 48,
-      "against": 57
-    }, 
+      "goalsFor" : 48,
+      "goalsAgainst": 57
+    },
     { "name" : "Aston_Villa",
-      "for" : 46,
-      "against": 47
+      "goalsFor" : 46,
+      "goalsAgainst": 47
     },
     { "name" : "Tottenham",
-      "for" : 49,
-      "against": 53
+      "goalsFor" : 49,
+      "goalsAgainst": 53
     },
     { "name" : "Blackburn",
-      "for" : 55,
-      "against": 51
-    }, 
+      "goalsFor" : 55,
+      "goalsAgainst": 51
+    },
     { "name" : "Southampton",
-      "for" : 46,
-      "against": 54
+      "goalsFor" : 46,
+      "goalsAgainst": 54
     },
     { "name" : "Middlesbrough",
-      "for" : 35,
-      "against": 47
+      "goalsFor" : 35,
+      "goalsAgainst": 47
     },
     { "name" : "Fulham",
-      "for" : 36,
-      "against": 44
-    }, 
+      "goalsFor" : 36,
+      "goalsAgainst": 44
+    },
     { "name" : "Charlton",
-      "for" : 38,
-      "against": 49
+      "goalsFor" : 38,
+      "goalsAgainst": 49
     },
     { "name" : "Everton",
-      "for" : 45,
-      "against": 57
+      "goalsFor" : 45,
+      "goalsAgainst": 57
     },
     { "name" : "Bolton",
-      "for" : 44,
-      "against": 62
+      "goalsFor" : 44,
+      "goalsAgainst": 62
     },
     { "name" : "Sunderland",
-      "for" : 29,
-      "against": 51
+      "goalsFor" : 29,
+      "goalsAgainst": 51
     },
     { "name" : "Ipswich",
-      "for" : 41,
-      "against": 64
+      "goalsFor" : 41,
+      "goalsAgainst": 64
     },
     { "name" : "Derby",
-      "for" : 33,
-      "against": 63
+      "goalsFor" : 33,
+      "goalsAgainst": 63
     },
     { "name" : "Leicester",
-      "for" : 30,
-      "against": 64
-    },    
+      "goalsFor" : 30,
+      "goalsAgainst": 64
+    },
 ];
