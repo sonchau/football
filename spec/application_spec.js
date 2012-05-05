@@ -67,10 +67,10 @@ describe("Football Collection", function () {
     expect(comparator.models[0].get('name')).toEqual("Chau Team");
     expect(comparator.models[1].get('name')).toEqual("Test Team");
     expect(comparator.models[2].get('name')).toEqual("Son Team");
-  })
+  });
 });
 
-describe ("Football view", function () {
+describe("Football view", function() {
   beforeEach(function () {
     setFixtures("<div id='data'><table><tbody></tbody></table></div>");
     var data = [
@@ -90,17 +90,17 @@ describe ("Football view", function () {
   });
   describe("render", function() {
     
-  })
+  });
   
 });
 
 describe("Football", function () {
 
   beforeEach(function() {
-    setFixtures('<div id="container"></div>')
+    setFixtures('<div id="container"></div>');
   });
 
   it("should render data to the page", function() {
     //expect('#data').toExist();
-  })
-})
+  });
+});
