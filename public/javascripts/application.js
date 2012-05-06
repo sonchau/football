@@ -2,7 +2,7 @@ var Football = Football || {};
 
 Football = {
   start: function() {
-    var view = new Football.ListView({el: $("#data tbody")});
+    var view = new Football.ListView({el: $("#data tbody"), mydata: data});
   }
 };
 
@@ -24,11 +24,12 @@ Football.Teams = Backbone.Collection.extend({
 
 Football.ListView = Backbone.View.extend({
 
-    initialize: function(){
+    initialize: function(options){
+      this.mydata = options.mydata;
       _.bindAll(this, 'render');
-      Football.CreateDiff(data);
+      Football.CreateDiff(this.mydata);
       this.league = new Football.Teams();
-      this.league.add(data);
+      this.league.add(this.mydata);
       this.render();
     },
 

@@ -44,7 +44,7 @@ describe("Football Collection", function () {
   it("should has football model", function () {
     var aModel = new Football.Team({
       'name': 'a name'
-    });  
+    });
     var aCollection = new Football.Teams();
     aCollection.add(aModel);
     expect(aCollection.models[0].get('name')).toEqual('a name');
@@ -71,36 +71,58 @@ describe("Football Collection", function () {
 });
 
 describe("Football view", function() {
-  beforeEach(function () {
-    setFixtures("<div id='data'><table><tbody></tbody></table></div>");
-    var data = [
-        { "name" : "Son",
-          "goalsFor" : 5,
-          "goalsAgainst": 1
-        },
-        { "name" : "Chau",
-          "goalsFor" : 3,
-          "goalsAgainst": 5
-        },
-        { "name" : "Test",
-          "goalsFor" : 2,
-          "goalsAgainst": 5
-        }
-    ];
-  });
-  describe("render", function() {
-    
-  });
-  
-});
 
-describe("Football", function () {
+  describe("render view", function() {
 
-  beforeEach(function() {
-    setFixtures('<div id="container"></div>');
+    it("shoud render the results to the page", function() {
+
+      spyOn(Football, 'CreateDiff');
+      var collection = new Football.Teams();
+      spyOn(collection, 'add');
+      setFixtures("<div id='data'><table><tbody></tbody></table></div>");
+      var view = new Football.ListView({el: $("#data tbody")});
+      expect($('#data tr')).toExist();
+      expect($('#data tr').length).toEqual(1);
+      expect($('#data tr td').length).toEqual(4);
+
+    });
   });
 
-  it("should render data to the page", function() {
-    //expect('#data').toExist();
+  describe("render view content ", function() {
+
+    beforeEach(function () {
+      this.data = [
+            { "name" : "Son",
+              "goalsFor" : 5,
+              "goalsAgainst": 1
+            },
+            { "name" : "Chau",
+              "goalsFor" : 3,
+              "goalsAgainst": 5
+            },
+            { "name" : "Test",
+              "goalsFor" : 2,
+              "goalsAgainst": 5
+            }
+        ];
+      setFixtures("<div id='data'><table><tbody></tbody></table></div><div id='diff-smallest'><span class='name'></span></div><div id='diff-largest'><span class='name'></span></div>");
+      this.view = new Football.ListView({el: $("#data tbody"), mydata: this.data});
+    });
+
+    it("shoud render the table", function() {
+      expect($('#data tr')).toExist();
+      expect($('#data tr').length).toEqual(3);
+      expect($('#data tr td').length).toEqual(12);
+    });
+
+    it("shoud append the smallest difference for and against to the page", function() {
+      expect($("#diff-smallest .name").html()).toEqual('Chau');
+    });
+
+    it("shoud append the highest difference for and against to the page", function() {
+      expect($("#diff-largest .name").html()).toEqual('Son');
+    });
+
   });
+
 });
