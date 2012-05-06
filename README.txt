@@ -24,4 +24,17 @@ The following table contains the results from the English Premier League for 200
 19. Derby           38     8   6  24    33  -  63    30
 20. Leicester       38     5  13  20    30  -  64    28
 
+Instructions
+
+1. Git clone repos
+
+git clone git@github.com:sonchau/football.git
+
+2. Open index.html to view the results
+
+open football/public/index.html
+
+3. Open application_spec.html to view jasmine spec
+
+open football/spec/application_spec.html
 
